@@ -1,0 +1,52 @@
+Description: Build system for shared library.
+Author: Scott Howard <showard@debian.org>
+
+--- /dev/null
++++ b/Makefile.am
+@@ -0,0 +1,33 @@
++pkgconfigdir = $(libdir)/pkgconfig
++pkgconfig_DATA = dxflib.pc
++
++BASE_DIR = ./src
++
++BASE_SRC = \
++		$(BASE_DIR)/dl_dxf.cpp \
++		$(BASE_DIR)/dl_writer_ascii.cpp
++
++BASE_INS = \
++		$(BASE_DIR)/dl_attributes.h \
++		$(BASE_DIR)/dl_codes.h \
++		$(BASE_DIR)/dl_creationadapter.h \
++		$(BASE_DIR)/dl_creationinterface.h \
++		$(BASE_DIR)/dl_dxf.h \
++		$(BASE_DIR)/dl_entities.h \
++		$(BASE_DIR)/dl_exception.h \
++		$(BASE_DIR)/dl_extrusion.h \
++		$(BASE_DIR)/dl_global.h \
++		$(BASE_DIR)/dl_writer.h \
++		$(BASE_DIR)/dl_writer_ascii.h
++
++lib_LTLIBRARIES = libdxflib.la
++libdxflib_la_SOURCES = $(BASE_SRC)
++libdxflib_la_includedir=$(includedir)/dxflib
++libdxflib_la_include_HEADERS = $(BASE_INS)
++libdxflib_la_LDFLAGS = -version-number 3:26:4
++
++testing:
++	(cd ./test ; make)
++
++docu:
++	-(doxygen ./doxygen.cfg)
+--- /dev/null
++++ b/dxflib.pc.in
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@/dxflib
++
++Name: dxflib
++Description: Library for reading dxf files
++Version: @PACKAGE_VERSION@
++Libs: -L${libdir} -ldxflib
++Cflags: -I${includedir}

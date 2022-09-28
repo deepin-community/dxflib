@@ -1,0 +1,5 @@
+dxflib for Debian
+-----------------
+
+dxflib's build system builds static libraries. Debian patches it to build
+ shared libraries.

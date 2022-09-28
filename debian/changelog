@@ -1,0 +1,138 @@
+dxflib (3.26.4-1) unstable; urgency=medium
+
+  [ Alastair McKinstry ]
+  * New upstream release
+  * Update patches to bump soverson to 3.26.4 from 3.17.0
+  * Standards-Version: 4.6.0
+  * Use debhelper-compat (= 13)
+  * Add d/gpb.conf file to point to DEP-14 branches
+  * Add not-installed file: not installing la files
+
+  [ Jelmer Vernooĳ ]
+  * Use secure copyright file specification URI.
+  * Trim trailing whitespace.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 16 Sep 2021 10:33:38 +0100
+
+dxflib (3.17.0-3) unstable; urgency=medium
+
+  * Standards-Version: 4.3.0
+  * Point VCS to salsa.debian.org
+  * Change homepage to https:
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sun, 20 Jan 2019 10:05:09 +0000
+
+dxflib (3.17.0-2) unstable; urgency=medium
+
+  * Standards-Version: 4.0.0; no changes required
+  * Add debian/gbp.conf file
+  * Label packages as Multi-Arch: same
+  * Drop obsolete B-D on dh-autoreconf, autotools-dev
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 28 Jul 2017 08:22:02 +0100
+
+dxflib (3.17.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update debian/copyright: test/* removed; GPL2+ files in debian/*
+  * Standards-Version: 3.9.8. No changes required.
+  * DH_COMPAT=10
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 19 Jun 2017 10:02:34 +0100
+
+dxflib (3.12.2-1) unstable; urgency=medium
+
+  * New upstream release. Move 2.5.0.0 -> 3 and rename packages.
+  * Remove explicit dbg package. Now done automatically.
+  * Remove lisandro from Uploaders:
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 09 Jan 2016 22:38:18 +0000
+
+dxflib (2.5.0.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * Remove myself from uploaders
+  * Updated symbols
+  * Rename package for g++ transition (Closes: #797649)
+  * Updated copyright
+  * Bump Debian SV to 3.9.6, no changes
+
+ -- Scott Howard <showard@debian.org>  Mon, 07 Sep 2015 12:30:34 -0400
+
+dxflib (2.5.0.0-3) unstable; urgency=medium
+
+  * Adopt dxflib. Closes: #733823.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 14 Aug 2015 17:31:11 +0100
+
+dxflib (2.5.0.0-2) unstable; urgency=low
+
+  * Merge from experimental to unstable. (Closes: #731577)
+
+ -- Scott Howard <showard@debian.org>  Fri, 13 Dec 2013 16:41:48 -0500
+
+dxflib (2.5.0.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Dropped debian/patches/hatch_fix.patch:
+    - patch from depending project that no longer uses dxflib
+  * Enable multi-arch, S-V 3.9.4, hardening flags
+  * Fix a FTBFS for missing AM_PROG_AR macro (Closes: #713303)
+
+ -- Scott Howard <showard@debian.org>  Sun, 23 Jun 2013 17:16:54 -0400
+
+dxflib (2.2.0.0-8) unstable; urgency=low
+
+  * More hatch fixes in debian/patches/hatches_fixes.patch
+
+ -- Scott Howard <showard@debian.org>  Sat, 03 Mar 2012 21:25:22 -0500
+
+dxflib (2.2.0.0-7) unstable; urgency=low
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Previous upload also included patch to solve a boundary bug
+    needed by LibreCAD. Thanks Rallaz for the patch.
+
+  [ Scott Howard ]
+  * Added symbols file, managed by pkgkde-symbolshelper
+
+ -- Scott Howard <showard@debian.org>  Sun, 05 Feb 2012 13:39:54 -0500
+
+dxflib (2.2.0.0-6) unstable; urgency=low
+
+  * Add myself to Uploaders.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 10 Oct 2011 14:24:55 -0300
+
+dxflib (2.2.0.0-5) unstable; urgency=low
+
+  * Moved headers to /usr/include/dxflib as excepted by upstream
+    makefile (Closes: #630999)
+  * Debian S-V 3.9.2 no changes
+
+ -- Scott Howard <showard@debian.org>  Sun, 19 Jun 2011 13:19:16 -0400
+
+dxflib (2.2.0.0-4) unstable; urgency=low
+
+  * Corrected debian/copyright to be GPLv2 and LGPLv2
+
+ -- Scott Howard <showard@debian.org>  Thu, 21 Apr 2011 23:11:41 -0400
+
+dxflib (2.2.0.0-3) unstable; urgency=low
+
+  * Removed symbols files, FTBFS (arch-dep symbols)
+
+ -- Scott Howard <showard@debian.org>  Thu, 14 Apr 2011 09:08:15 -0400
+
+dxflib (2.2.0.0-2) unstable; urgency=low
+
+  * Set source package priority: optional, no change to binary packages
+  * Removed *.la from debian/libdxflib-dev.install
+
+ -- Scott Howard <showard@debian.org>  Thu, 07 Apr 2011 19:13:27 -0400
+
+dxflib (2.2.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #617623)
+
+ -- Scott Howard <showard@debian.org>  Sat, 12 Mar 2011 12:00:24 -0500

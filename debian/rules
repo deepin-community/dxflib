@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+LIBDIR:=/usr/lib/$(DEB_HOST_MULTIARCH)
+
+%:
+	mv configure.in configure.ac
+	dh $@ 
+	mv configure.ac configure.in
+
+override_dh_auto_test:
+	make testing
+
+override_dh_auto_install:
+	dh_auto_install
+	dh_link -p libdxflib3 $(LIBDIR)/libdxflib.so.3.17.0	 $(LIBDIR)/libdxflib.so.3

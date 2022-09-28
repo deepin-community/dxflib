@@ -1,0 +1,13 @@
+Description: Missing include needs to be added
+Author: Scott Howard <showard@debian.org>
+
+--- a/src/dl_writer.h
++++ b/src/dl_writer.h
+@@ -38,6 +38,7 @@
+ 
+ #include <cstring>
+ #include <iostream>
++#include <cstring>
+ #include <algorithm>
+ 
+ #include "dl_attributes.h"
